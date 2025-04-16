@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  sender:
+    build:
+      context: .
+      dockerfile: Dockerfile.sender
+    depends_on:
+      - receiver
+
+  receiver:
+    build:
+      context: .
+      dockerfile: Dockerfile.receiver
+
+  frontend:
+    build:
+      context: ./visualization
+    ports:
+      - "8080:80"

@@ -1,0 +1,8 @@
+# Dockerfile.receiver
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY receiver.py .
+
+CMD ["python", "receiver.py"]

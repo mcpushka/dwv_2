@@ -1,0 +1,9 @@
+# Dockerfile.sender
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY sender.py .  
+COPY ip_addresses.csv . 
+
+CMD ["python", "sender.py"]
