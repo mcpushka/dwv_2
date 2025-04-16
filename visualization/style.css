@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  width: 100%;
+  clear: both; /* Убирает влияние float-элементов */
+}
+
+#globe-container {
+  width: 75%;
+  height: 100vh;
+  float: left;
+}
+
+#sidebar {
+  width: 25%;
+  height: 100vh;
+  float: right;
+  background: #222;
+  padding: 1em;
+  box-sizing: border-box;
+  overflow-y: auto;
+  position: relative;
+}
+
+#location-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: list-counter;
+}
+
+#location-list li {
+  counter-increment: list-counter;
+  margin: 8px 0;
+  padding-left: 25px;
+  position: relative;
+  color: #ffffff;
+}
+
+#location-list li::before {
+  content: counter(list-counter) ".";
+  position: absolute; 
+  left: 0;
+  color: #2b992d;
+  font-weight: bold;
+}
+
+#filters-section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+#filters-section h2 {
+  color: #00ff88;
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.filter-btn.all {
+  background: #666;
+  color: white;
+}
+
+.filter-btn.suspicious {
+  background: #ff4444;
+  color: white;
+}
+
+.filter-btn.reliable {
+  background: #44ff44;
+  color: #111;
+}
+
+.filter-btn.active {
+  transform: scale(0.95);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+.filter-btn.all.active { background: #444; }
+.filter-btn.suspicious.active { background: #cc0000; }
+.filter-btn.reliable.active { background: #00cc00; }
