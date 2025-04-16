@@ -21,4 +21,4 @@ Unfortunately, I was unable to wrap all sender, ask and frontend parts in docker
 4. Logging in to the site: enter `http://localhost:8000` in the site address field
 
 - 2 way:
-- 
+1. Watch Recording dwv.mp4
